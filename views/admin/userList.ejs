@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('partials/header')%>
+</head>
+
+<body class="app">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
+    });
+</script>
+<div>
+    <%- include('partials/sidebar')%>
+    <div class="page-container">
+        <%- include('partials/menu') %>
+        <main class="main-content">
+            <div id="mainContent" class="mT-10">
+                <!--<h4 class="c-grey-900 mT-10 mB-30">Role Master</h4>-->
+                <div class="row gap-20 masonry pos-r">
+                    <div class="masonry-sizer col-md-12"></div>
+
+                    <div class="masonry-item col-md-12">
+                        <div class="form-header btn-right-align">
+                            <h6>User Lists</h6>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary text-right" data-toggle="modal" data-target="#createUser">
+                                Create User
+                            </button>
+                        </div>
+                        <div class="bgc-white p-20 bd">
+                            <div class="mT-10">
+                                <!-- Modal -->
+                                <div class="modal fade" id="createUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Firstname</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="firstname" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_date" class="col-sm-4 col-form-label">Lastname</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="lastname" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Department</label>
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control">
+                                                                    <option value="Sales">Sales</option>
+                                                                    <option value="Sales">Stores</option>
+                                                                    <option value="Sales">Security</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_date" class="col-sm-4 col-form-label">Role</label>
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control">
+                                                                    <option value="manager">Manager</option>
+                                                                    <option value="supervisor">Supervisor</option>
+                                                                    <option value="supervisor">supervisor</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Email ID</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="email_id" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 row">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Username</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="username" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_date" class="col-sm-4 col-form-label">Password</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="password" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Create</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Edit User -->
+                                <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Firstname</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="firstname" value="Peter" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_date" class="col-sm-4 col-form-label">Lastname</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="lastname" value="Jhons" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Department</label>
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control">
+                                                                    <option value="Sales" selected>Sales</option>
+                                                                    <option value="Sales">Stores</option>
+                                                                    <option value="Sales">Security</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_date" class="col-sm-4 col-form-label">Role</label>
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control">
+                                                                    <option value="manager" selected>Manager</option>
+                                                                    <option value="supervisor">Supervisor</option>
+                                                                    <option value="supervisor">supervisor</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Email ID</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="email_id" value="peterjhons@tvstyres.co.in" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 row">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Username</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" value="peter-tvs" id="username" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6 row">
+                                                            <label for="document_date" class="col-sm-4 col-form-label">Password</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" id="password" value="******************" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-row mB-20 table-responsive">
+                                    <table class="table form-table">
+                                        <thead class="thead-blue">
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Department</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Email ID</th>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Peter Jhons</td>
+                                            <td>Stores</td>
+                                            <td>Manager</td>
+                                            <td>peterjhons@tvstyres.co.in</td>
+                                            <td>peter-tvs</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Change Status
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Active</a>
+                                                        <a class="dropdown-item" href="#">Deactive</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="edit" title="edit" data-toggle="modal" data-target="#editUser"><i class="ti-pencil-alt"></i></a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Peter Jhons</td>
+                                            <td>Stores</td>
+                                            <td>Manager</td>
+                                            <td>peterjhons@tvstyres.co.in</td>
+                                            <td>peter-tvs</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Change Status
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Active</a>
+                                                        <a class="dropdown-item" href="#">Deactive</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="edit" title="edit" data-toggle="modal" data-target="#editUser"><i class="ti-pencil-alt"></i></a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Peter Jhons</td>
+                                            <td>Stores</td>
+                                            <td>Manager</td>
+                                            <td>peterjhons@tvstyres.co.in</td>
+                                            <td>peter-tvs</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Change Status
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Active</a>
+                                                        <a class="dropdown-item" href="#">Deactive</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="edit" title="edit" data-toggle="modal" data-target="#editUser"><i class="ti-pencil-alt"></i></a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Peter Jhons</td>
+                                            <td>Stores</td>
+                                            <td>Manager</td>
+                                            <td>peterjhons@tvstyres.co.in</td>
+                                            <td>peter-tvs</td>
+                                            <td>deactive</td>
+                                            <td>
+                                                <a href="#" class="edit" title="edit" data-toggle="modal" data-target="#editUser"><i class="ti-pencil-alt"></i></a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Peter Jhons</td>
+                                            <td>Stores</td>
+                                            <td>Manager</td>
+                                            <td>peterjhons@tvstyres.co.in</td>
+                                            <td>peter-tvs</td>
+                                            <td>deactive</td>
+                                            <td>
+                                                <a href="#" class="edit" title="edit" data-toggle="modal" data-target="#editUser"><i class="ti-pencil-alt"></i></a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Peter Jhons</td>
+                                            <td>Stores</td>
+                                            <td>Manager</td>
+                                            <td>peterjhons@tvstyres.co.in</td>
+                                            <td>peter-tvs</td>
+                                            <td>deactive</td>
+                                            <td>
+                                                <a href="#" class="edit" title="edit" data-toggle="modal" data-target="#editUser"><i class="ti-pencil-alt"></i></a>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Peter Jhons</td>
+                                            <td>Stores</td>
+                                            <td>Manager</td>
+                                            <td>peterjhons@tvstyres.co.in</td>
+                                            <td>peter-tvs</td>
+                                            <td>deactive</td>
+                                            <td>
+                                                <a href="#" class="edit" title="edit" data-toggle="modal" data-target="#editUser"><i class="ti-pencil-alt"></i></a>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('partials/footer')%>
+    </div>
+</div>
+<%- include('partials/script') %>
+<script>
+    $(function(){
+
+        $('.dropdown-menu a').click(function(){
+            $('#dropdownMenuButton').text($(this).text());
+        });
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+body { color: #101010 }
+.main-content { background: #f0faff}
+.form-header { background: #f2f2f2; padding: 15px; position: relative}
+.form-header h6 { margin-bottom: 0; color: #1637aa}
+.header {background-image: linear-gradient(to left, #1638aa, #005cc0, #007aca, #0096cb, #2bafca);}
+.header .header-container .nav-right > li.profile-li > a {color:#fff;border-radius: 50px; line-height: 40px !important; min-height: inherit; margin: 10px 10px auto;border: 1px solid #2bafca; padding: 0 15px 0 5px}
+.header .header-container .nav-right > li.profile-li > a:hover { color: #fff}
+.form-btn-group { justify-content: right}
+.btn-save { background: #eb6f00; color: #fff}
+.btn-submit { background: #1849a8; color: #fff;}
+table .thead-blue { background: #c9eaff; color: #2f2f2f}
+table.form-table tbody { background: #f9f4f4 }
+.toast-top-right {top: 70px !important;}
+.col-form-label { text-align: center}
+.centerAB { top: 25%;left: 25%;-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}
+.banner-img {height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;     background: url('/images/material_bg.jpg') no-repeat center center fixed; background-size: cover}
+.banner-img .t-logo {width: 249px;height: 83px; }
+.banner-img .t-logo img { width: 100%}
+.overlay {background-image: linear-gradient(to right, #28a3b6, #008db8, #0075b8, #005ab0, #1f3b9d); position: absolute; top: 0; left: 0; width: 100%;height: 100%;opacity: 0.9;}
+.signin-box { text-align:center;border-radius: 50px;top: 50%; left: 50%; margin: 0; transform: translate(-50%,-50%); margin-right: -50px; width: 35%;background: #fff;padding: 20px 30px 20px 20px;box-shadow: -45px 0 5px 0 rgba(30, 59, 157, 0.8)}
+.signin-box .logo { text-align: center; margin-bottom: 25px;}
+.login-form .form-control { padding: 0.8rem .75rem;}
+.login-btn { padding-left: 0 !important;}
+.login-btn .btn, .login-btn .btn:hover { padding: 0.575rem 1rem; background: #1e3b9d; border: none}
+.login-form .toggle-password { top: 20px; right: 25px;}
+.label-blue {color: #606eab; font-size: 16px}
+.sidebar .sidebar-inner .sidebar-logo a .logo img { width: 100%}
+.store-tables .dataTables_wrapper .dataTables_filter {position: absolute;right: 25px;top: 9px;}
+
+/*tab navigation*/
+.nav-tabs-custom .list-group-item { border-radius: 0 !important;}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {background: #2aacca !important;border-radius: 50px;}
+/*datatable sorting dropdown*/
+.dataTables_wrapper .dataTables_length { display: none}
+/*datatable th.td border*/
+.store-tables .table thead th,.store-tables .table td, .store-tables .table th { border: none !important;}
+/*.main-content {padding: 65px 5px 20px !important;}*/
+.btn-right-align button{ position: absolute; right: 0; top: 10px}
+table.quantity_table td { padding: 2px 0 !important; border: none}
+table.dataTable thead th.sorting:after {
+    content: "\f0dc";
+    color: #ddd;
+    font-size: 0.8em;
+    padding-top: 0.12em;
+}
+table.dataTable thead th.sorting_asc:after {
+    content: "\f0de";
+}
+table.dataTable thead th.sorting_desc:after {
+    content: "\f0dd";
+}

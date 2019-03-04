@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %>
+</head>
+<body>
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="/images//sidebar-5.jpg">
+
+        <%- include('partials/sidebar') %>
+    </div>
+
+    <div class="main-panel">
+        <%- include('partials/menu') %>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title">User details</h4>
+                                <p class="category">Here is a subtitle for this table</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <div id="basicgrid"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </div>
+</div>
+</body>
+<%- include('partials/script') %>
+</html>

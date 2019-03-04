@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('partials/header')%>
+</head>
+
+<body class="app">
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
+    });
+</script>
+<div>
+    <%- include('partials/sidebar')%>
+  <div class="page-container">
+      <%- include('partials/menu') %>
+    <main class='main-content bgc-grey-100'>
+      <div id='mainContent'>
+        <div class="row gap-20 masonry pos-r">
+          <div class="masonry-sizer col-md-6"></div>
+          <div class="masonry-item  w-100">
+            <div class="row gap-20">
+              <!-- #Toatl Visits ==================== -->
+
+
+              <!-- #Total Page Views ==================== -->
+              <div class='col-md-4'>
+                <div class="layers bd bgc-white p-20">
+                  <div class="layer w-100 mB-10">
+                    <h6 class="lh-1">Total Users</h6>
+                  </div>
+                  <div class="layer w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span id="sparklinedash2"></span>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">7</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- #Unique Visitors ==================== -->
+              <div class='col-md-4'>
+                <div class="layers bd bgc-white p-20">
+                  <div class="layer w-100 mB-10">
+                    <h6 class="lh-1">Total Departments</h6>
+                  </div>
+                  <div class="layer w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span id="sparklinedash3"></span>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">12</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- #Bounce Rate ==================== -->
+              <div class='col-md-4'>
+                <div class="layers bd bgc-white p-20">
+                  <div class="layer w-100 mB-10">
+                    <h6 class="lh-1">Total Roles</h6>
+                  </div>
+                  <div class="layer w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span id="sparklinedash4"></span>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">33</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="masonry-item col-md-12">
+            <div class=" bgc-white bd p-20">
+              <!-- Custom Tabs -->
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a class="list-group-item list-group-item-action active" href="#tab_1" data-toggle="tab">User List</a></li>
+                  <li><a href="#tab_2" class="list-group-item list-group-item-action" data-toggle="tab">Roles List</a></li>
+                  <li><a href="#tab_3" class="list-group-item list-group-item-action" data-toggle="tab">Demo Link</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active bdT pY-30" id="tab_1">
+                    <div class="col-md-12">
+                      <div class="form-header btn-right-align">
+                        <h6>User Lists</h6>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary text-right" data-toggle="modal" data-target="#createUser">
+                          Create User
+                        </button>
+                      </div>
+                      <div class="bgc-white p-5">
+                        <div class="mT-10">
+                          <!-- Modal -->
+                          <div class="modal fade" id="createUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Firstname</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="firstname" placeholder="">
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_date" class="col-sm-4 col-form-label">Lastname</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="lastname" placeholder="">
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Department</label>
+                                        <div class="col-sm-8">
+                                          <select class="form-control">
+                                            <option value="Sales">Sales</option>
+                                            <option value="Sales">Stores</option>
+                                            <option value="Sales">Security</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_date" class="col-sm-4 col-form-label">Role</label>
+                                        <div class="col-sm-8">
+                                          <select class="form-control">
+                                            <option value="manager">Manager</option>
+                                            <option value="supervisor">Supervisor</option>
+                                            <option value="supervisor">supervisor</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Email ID</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="email_id" placeholder="">
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-6 row">
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Username</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="username" placeholder="">
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_date" class="col-sm-4 col-form-label">Password</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="password" placeholder="">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Create</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Edit User -->
+                          <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Firstname</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="firstname" value="Peter" placeholder="">
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_date" class="col-sm-4 col-form-label">Lastname</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="lastname" value="Jhons" placeholder="">
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Department</label>
+                                        <div class="col-sm-8">
+                                          <select class="form-control">
+                                            <option value="Sales" selected>Sales</option>
+                                            <option value="Sales">Stores</option>
+                                            <option value="Sales">Security</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_date" class="col-sm-4 col-form-label">Role</label>
+                                        <div class="col-sm-8">
+                                          <select class="form-control">
+                                            <option value="manager" selected>Manager</option>
+                                            <option value="supervisor">Supervisor</option>
+                                            <option value="supervisor">supervisor</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Email ID</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="email_id" value="peterjhons@tvstyres.co.in" placeholder="">
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-6 row">
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Username</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" value="peter-tvs" id="username" placeholder="">
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-6 row">
+                                        <label for="document_date" class="col-sm-4 col-form-label">Password</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" class="form-control" id="password" value="******************" placeholder="">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Update</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-row mB-20 table-responsive">
+                            <table class="table form-table dataTable" id="dataTable">
+                              <thead class="thead-blue">
+                              <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Email ID</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <% for(let i = 0; i < posts.length; i++) { %>
+                              <tr>
+                                <td><%= posts[i].name %></td>
+                                <td><%= posts[i].Department %></td>
+                                <td><%= posts[i].Role %></td>
+                                <td><%= posts[i].email %></td>
+                                <td><%= posts[i].username %></td>
+                                <td><%= posts[i].status %></td>
+                                <td>
+                                  <div class="dropdown">
+                                    <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Change Status
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">Active</a>
+                                      <a class="dropdown-item" href="#">Deactive</a>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <% } %>
+
+                              </tbody>
+                            </table>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane bdT pY-30" id="tab_2">
+                    <div class="col-md-12">
+                      <div class="form-header btn-right-align">
+                        <h6>Role Master</h6>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary text-right" data-toggle="modal" data-target="#createRole">
+                          Create Role
+                        </button>
+                      </div>
+                      <div class="bgc-white p-5">
+                        <div class="mT-10">
+                          <!-- Modal -->
+                          <div class="modal fade" id="createRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <form method="post" action="/createRoles">
+                                  <div class="modal-body">
+                                    <div class="form-row mB-20">
+                                      <div class="form-group col-md-12 row">
+                                        <label for="document_no" class="col-sm-4 col-form-label">Role Name</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" name="rolename" class="form-control" id="rolename" placeholder="">
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-md-12 row">
+                                        <label for="document_date" class="col-sm-4 col-form-label">Department Name</label>
+                                        <div class="col-sm-8">
+                                          <input type="text" name="department_name" class="form-control" id="department_name" placeholder="">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Create User</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row mB-20 table-responsive">
+                            <table class="table form-table dataTable" id="dataTable">
+                              <thead class="thead-blue">
+                              <tr>
+                                <th scope="col">Role</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+
+                              <% if(userRoles.length > 0 ) { %>
+                                <% for(let j = 0; j < userRoles.length; j++) { %>
+                                <tr>
+                                  <td><%= userRoles[j].name %></td>
+                                  <td><%= userRoles[j].department_id %></td>
+                                  <td>
+                                    <div class="dropdown">
+                                      <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Change Status
+                                      </button>
+                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Active</a>
+                                        <a class="dropdown-item" href="#">Deactive</a>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <% } %>
+                              <% } %>
+
+                              </tbody>
+                            </table>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane bdT pX-40 pY-30" id="tab_3">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                    sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum.
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div>
+              <!-- nav-tabs-custom -->
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+      </div>
+    </main>
+      <%- include('partials/footer')%>
+  </div>
+</div>
+<%- include('partials/script') %>
+</body>
+
+</html>

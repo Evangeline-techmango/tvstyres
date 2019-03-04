@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('partials/header')%>
+</head>
+
+<body class="app">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
+    });
+</script>
+<div>
+    <%- include('partials/sidebar')%>
+    <div class="page-container">
+        <%- include('partials/menu') %>
+        <main class="main-content">
+            <div id="mainContent">
+                <h4 class="c-grey-900 mT-10 mB-30">With Weighment</h4>
+                <div class="row gap-20 masonry pos-r">
+                    <div class="masonry-sizer col-md-12"></div>
+
+                    <div class="masonry-item col-md-12">
+                        <div class="form-header">
+                            <h6>Weigh Bridge Process(empty)</h6>
+                        </div>
+                        <div class="bgc-white p-20 bd">
+                            <div class="mT-30">
+                                <form>
+                                    <div class="form-row mB-20">
+                                        <div class="form-group col-md-6 row">
+                                            <label for="rf-id-token" class="col-sm-4 col-form-label">RF ID Token</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="rf-id-token" placeholder="Scan the token & No will be displayed">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 row">
+                                            <label for="weighment_date" class="col-sm-4 col-form-label">Weighment Date</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" disabled id="weighment_date" placeholder="Display date & time">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mB-20">
+                                        <div class="form-group col-md-6 row">
+                                            <label for="truck_no" class="col-sm-4 col-form-label">Truck Number</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" disabled id="truck_no" placeholder="Display">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 row">
+                                            <label for="gross-weight" class="col-sm-4 col-form-label">Empty Truck Weight</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="gross-weight" placeholder="Capture from empty truck weight">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row form-btn-group">
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-secondary btn-block">Clear</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-save btn-block">Save</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-submit btn-block">Submit</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-secondary btn-block">EXIT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('partials/footer')%>
+    </div>
+</div>
+<%- include('partials/script') %>
+</body>
+
+</html>

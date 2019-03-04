@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('partials/header')%>
+</head>
+
+<body class="app">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
+    });
+</script>
+<div>
+    <%- include('partials/sidebar')%>
+    <div class="page-container">
+        <%- include('partials/menu') %>
+        <main class="main-content">
+            <div id="mainContent">
+                <h4 class="c-grey-900 mT-10 mB-30">Gate Entry - With Weighment</h4>
+                <div class="row gap-20 masonry pos-r">
+                    <div class="masonry-sizer col-md-12"></div>
+
+                    <div class="masonry-item col-md-12">
+                        <div class="form-header">
+                            <h6>Vehicle Entry Movement(Security)</h6>
+                        </div>
+                        <div class="bgc-white p-20 bd">
+                            <div class="mT-30">
+                                <form>
+                                    <div class="form-row mB-20">
+                                        <div class="form-group col-md-6 row">
+                                            <label for="document_no" class="col-sm-4 col-form-label">Document No</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="document_no" placeholder="System Generated">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 row">
+                                            <label for="document_date" class="col-sm-4 col-form-label">Document Date</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" disabled id="document_date" placeholder="Display date & time">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mB-20">
+                                        <div class="form-group col-md-6 row">
+                                            <label for="inwared_type" class="col-sm-4 col-form-label">Inward Type</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" id="inwared_type">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 row">
+                                            <label for="transporter-vendor" class="col-sm-4 col-form-label">Transporter Vendor</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="transporter-vendor" placeholder="User Will input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row mB-20">
+                                        <div class="form-group col-md-6 row">
+                                            <label for="truck-number" class="col-sm-4 col-form-label">Truck Number</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="truck-number" placeholder="Select from Help">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 row">
+                                            <label for="driver-name" class="col-sm-4 col-form-label">Driver Name</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="driver-name" placeholder="User input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row mB-20">
+                                        <div class="form-group col-md-6 row">
+                                            <label for="supplier-name" class="col-sm-4 col-form-label">Supplier Name</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="supplier-name" placeholder="Select from Help">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 row">
+                                            <label for="gst-no" class="col-sm-4 col-form-label">GST No</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="gst-no" disabled placeholder="GST number">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row mB-20">
+                                        <div class="form-group col-md-6 row">
+                                            <label for="po-referance" class="col-sm-4 col-form-label">PO Referance</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" disabled id="po-referance">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 row">
+                                            <label for="ivoice-details" class="col-sm-4 col-form-label">Invoice/DC Details</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="invoice-details" placeholder="User input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-row mB-20">
+                                        <div class="form-group col-md-6 row">
+                                            <label for="preferred-location" class="col-sm-4 col-form-label">RF ID Token</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" disabled id="invoice-details" placeholder="User input">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row mB-20 table-responsive">
+                                        <table class="table form-table">
+                                            <thead class="thead-blue">
+                                            <tr>
+                                                <th scope="col">Item code</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">UOM</th>
+                                                <th scope="col">PO Quantity</th>
+                                                <th scope="col">Invoice Quantity</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">xxxxxxx</th>
+                                                <td>xxxxxxxxxx</td>
+                                                <td>KGS</td>
+                                                <td>1000</td>
+                                                <td width="25%">
+                                                    <input type="text" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                    <div class="form-group row form-btn-group">
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-secondary btn-block">Clear</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-save btn-block">Save</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-submit btn-block">Submit</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-secondary btn-block">EXIT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('partials/footer')%>
+    </div>
+</div>
+<%- include('partials/script') %>
+</body>
+
+</html>

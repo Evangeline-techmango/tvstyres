@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('partials/header')%>
+</head>
+
+<body class="app">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
+    });
+</script>
+<div>
+    <%- include('partials/sidebar')%>
+    <div class="page-container">
+        <%- include('partials/menu') %>
+        <main class="main-content">
+            <div id="mainContent" class="mT-10">
+                <!--<h4 class="c-grey-900 mT-10 mB-30">Role Master</h4>-->
+                <div class="row gap-20 masonry pos-r">
+                    <div class="masonry-sizer col-md-12"></div>
+
+                    <div class="masonry-item col-md-12">
+                        <div class="form-header btn-right-align">
+                            <h6>Role Master</h6>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary text-right" data-toggle="modal" data-target="#createRole">
+                                Create Role
+                            </button>
+                        </div>
+                        <div class="bgc-white p-20 bd">
+                            <div class="mT-10">
+                                <!-- Modal -->
+                                <div class="modal fade" id="createRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form method="post" action="/createRoles">
+                                            <div class="modal-body">
+                                                    <div class="form-row mB-20">
+                                                        <div class="form-group col-md-12 row">
+                                                            <label for="document_no" class="col-sm-4 col-form-label">Role Name</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" name="rolename" class="form-control" id="rolename" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-12 row">
+                                                            <label for="document_date" class="col-sm-4 col-form-label">Department Name</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" name="department_name" class="form-control" id="department_name" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Create User</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row mB-20 table-responsive">
+                                    <table class="table form-table">
+                                        <thead class="thead-blue">
+                                        <tr>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Department</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>xxxxxxxxxx</td>
+                                            <td>Stores</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Change Status
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Active</a>
+                                                        <a class="dropdown-item" href="#">Deactive</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('partials/footer')%>
+    </div>
+</div>
+<%- include('partials/script') %>
+<% if(errors) {
+    errors.forEach(function (errors) {
+    %>
+    <script>
+        toastr.error('<%= errors.msg %>', {
+            positionClass: "toast-top-center"
+        })
+    </script>
+    <%
+    })
+    }
+%>
+
+</body>
+
+</html>

@@ -140,6 +140,9 @@ module.exports = {
     withWeightment(req,res){
         res.render('withWeighment.ejs');
     },
+	security(req,res){
+        res.render('security.ejs');
+    },
     weighBridgeProcess(req,res){
         res.render('weighBridgeProcess.ejs');
     },

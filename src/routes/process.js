@@ -5,6 +5,7 @@ const userController = require('../controllers').user;
 
 /*TVS static pages*/
 router.get('/withWeighment',userController.withWeightment);
+router.get('/security_dashboard',userController.security);
 router.get('/weighBridgeProcess',userController.weighBridgeProcess);
 router.get('/weighBridgeEmptyProcess',userController.weighBridgeEmptyProcess);
 router.get('/unloadProcess',userController.unloadProcess);

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('partials/header')%>
+</head>
+
+<body class="app">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
+    });
+</script>
+<div>
+    <%- include('partials/sidebar')%>
+    <div class="page-container">
+        <%- include('partials/menu') %>
+        <main class='main-content bgc-grey-100'>
+            <div id='mainContent'>
+                <h4 class="c-grey-900 mT-10 mB-30">Gate - Security</h4>
+                <div class="row gap-20 masonry pos-r">
+                    <div class="masonry-sizer col-md-6"></div>
+                    <div class="masonry-item  w-100">
+                        <div class="row gap-20">
+                            <!-- #Toatl Visits ==================== -->
+                            <!-- #Total Page Views ==================== -->
+                            <div class='col-md-4'>
+                                <div class="layers bd bgc-white p-20">
+                                    <div class="layer w-100 mB-10">
+                                        <h6 class="lh-1">Total Vehicles Registered </h6>
+                                    </div>
+                                    <div class="layer w-100">
+                                        <div class="peers ai-sb fxw-nw">
+                                            <div class="peer peer-greed">
+                                                <span id="sparklinedash2"></span>
+                                            </div>
+                                            <div class="peer">
+                                                <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">7</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- #Unique Visitors ==================== -->
+                            <div class='col-md-4'>
+                                <div class="layers bd bgc-white p-20">
+                                    <div class="layer w-100 mB-10">
+                                        <h6 class="lh-1">Stock Cleared</h6>
+                                    </div>
+                                    <div class="layer w-100">
+                                        <div class="peers ai-sb fxw-nw">
+                                            <div class="peer peer-greed">
+                                                <span id="sparklinedash3"></span>
+                                            </div>
+                                            <div class="peer">
+                                                <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">12</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- #Bounce Rate ==================== -->
+                            <div class='col-md-4'>
+                                <div class="layers bd bgc-white p-20">
+                                    <div class="layer w-100 mB-10">
+                                        <h6 class="lh-1">Total</h6>
+                                    </div>
+                                    <div class="layer w-100">
+                                        <div class="peers ai-sb fxw-nw">
+                                            <div class="peer peer-greed">
+                                                <span id="sparklinedash4"></span>
+                                            </div>
+                                            <div class="peer">
+                                                <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">33</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item col-md-12">
+                        <div class=" bgc-white bd p-20">
+                            <div class="form-row mB-20 table-responsive">
+                                <table class="table form-table">
+                                    <thead class="thead-blue">
+                                    <tr>
+                                        <th scope="col">Truck Number</th>
+                                        <th scope="col">Item Code</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Stock Clearance</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td scope="row">TS 09 MD 7987</td>
+                                        <td>xxxxxxxxxx</td>
+                                        <td>12</td>
+                                        <td>OK</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"> KA 01 AF 8192</td>
+                                        <td>xxxxxxxxxx</td>
+                                        <td>12</td>
+                                        <td>OK</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">DL 11 CAA 1111</td>
+                                        <td>xxxxxxxxxx</td>
+                                        <td>12</td>
+                                        <td>OK</td>
+                                    </tr><tr>
+                                        <td scope="row">xxxxxxx</td>
+                                        <td>xxxxxxxxxx</td>
+                                        <td>12</td>
+                                        <td>OK</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">xxxxxxx</td>
+                                        <td>xxxxxxxxxx</td>
+                                        <td>12</td>
+                                        <td>OK</td>
+                                    </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+        </main>
+        <%- include('partials/footer')%>
+    </div>
+</div>
+<%- include('partials/script') %>
+</body>
+
+</html>

@@ -26,6 +26,7 @@ router.get('/allCountries',userController.getCountry);
 
 router.get('/login',userController.signin);
 router.get('/signup',userController.signup);
+router.post('/createUser',userController.add);
 
 
 getToken = function (headers) {

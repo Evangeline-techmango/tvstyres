@@ -29,10 +29,15 @@ module.exports = {
         if(!req.body.username || !req.body.password){
 			res.status(400).send("Please enter username or password")
 		}
+		console.log(req.body)
 		return User
 			.create({
-				username: req.body.username,
-				password: req.body.password
+                firstname: req.body.firstname,
+				lastname: req.body.lastname,
+				deapartment_id: req.body.department_id,
+				email: req.body.email,
+                username: req.body.username,
+                password: req.body.password
 			})
 			.then((user) => {res.status(201).send(user)})
 			.catch((error) => {console.log(error); res.status(400).send(error)})

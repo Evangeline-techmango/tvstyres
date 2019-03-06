@@ -1,9 +1,9 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-var logger = require('morgan');
+const logger = require('morgan');
 const cors = require('cors');
 const session = require('express-session');
 const expressValidator = require('express-validator');
@@ -11,12 +11,12 @@ const compression = require('compression')
 const uuid = require('uuid/v4');
 
 
-var indexRouter = require('./src/routes/index');
-var usersRouter = require('./src/routes/users');
-var adminRouter = require('./src/routes/admin');
-var processRouter = require('./src/routes/process');
+const indexRouter = require('./src/routes/index');
+const usersRouter = require('./src/routes/users');
+const adminRouter = require('./src/routes/admin');
+const processRouter = require('./src/routes/process');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,7 +44,7 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/admin', adminRouter);
+app.use('/', adminRouter);
 app.use('/', processRouter);
 
 // catch 404 and forward to error handler

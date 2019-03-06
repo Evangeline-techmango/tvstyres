@@ -344,7 +344,7 @@
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
-                                <form method="post" action="/createRoles">
+                                <form method="post" action="/RoleList">
                                   <div class="modal-body">
                                     <div class="form-row mB-20">
                                       <div class="form-group col-md-12 row">
@@ -356,7 +356,10 @@
                                       <div class="form-group col-md-12 row">
                                         <label for="document_date" class="col-sm-4 col-form-label">Department Name</label>
                                         <div class="col-sm-8">
-                                          <input type="text" name="department_name" class="form-control" id="department_name" placeholder="">
+                                          <select name="department_id">
+                                            <option value="1">IT</option>
+                                            <option value="2">Sales</option>
+                                          </select>
                                         </div>
                                       </div>
                                     </div>

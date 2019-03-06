@@ -1,37 +1,16 @@
 'use strict';
-
-// const jwt = require('./jsonwebtoken');
-var bcrypt = require('bcrypt-nodejs');
-
-
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
+    firstname: DataTypes.STRING,
+    lastname: DataTypes.STRING,
+    department_id: DataTypes.INTEGER,
+    role: DataTypes.INTEGER,
+    email: DataTypes.STRING,
     username: DataTypes.STRING,
     password: DataTypes.STRING
   }, {});
-
-  User.beforeSave((user,options) => {
-    if(user.changed('password')) {
-      user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10),null);
-    }
-  });
-
-  User.prototype.comparePassword = function(passw, cb) {
-    bcrypt.compare(passw, this.password, function (err, isMatch) {
-      if(err){
-        return cb(err);
-      }
-      else {
-        cb(null, isMatch);
-      }
-    })
-  };
-
   User.associate = function(models) {
-    // User.hasOne(models.Profile,{
-    // 	foreignKey: 'user_id',
-    // 	as: 'profile'
-    // });
+    // associations can be defined here
   };
   return User;
 };
